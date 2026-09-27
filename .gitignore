@@ -14,3 +14,10 @@ node_modules/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# The private style guide is stored outside this public website.
+guia-de-estilo.*
+guia-estilo.css
+Alfa-Bursatil-Guia-de-Estilo.pdf
+/docs/design-tokens.json
+/docs/assets/landing-*.webp

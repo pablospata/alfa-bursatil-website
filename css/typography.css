@@ -1,0 +1,210 @@
+/* Shared type roles. Display headings and mathematical notation keep their scale. */
+:root {
+  --type-data:10px;
+  --type-label:11px;
+  --type-ui:12px;
+  --type-body:14px;
+  --type-intro:16px;
+  --type-lead:20px;
+  --type-code:12px;
+  --leading-label:14px;
+  --leading-ui:18px;
+  --tracking-label:.06em;
+  --tracking-compact:.02em;
+}
+
+/* Editorial labels share a size, with compact tracking for short annotations. */
+.hero-topline,
+.hero-location,
+.hero-bottom,
+.hero-bottom>a,
+.section-index,
+.section-index>span:last-child,
+.method-copy .eyebrow,
+.method-tags,
+.panel-note,
+.method-footer,
+.portrait-caption,
+.portrait-footer,
+.about-copy>.eyebrow,
+.about-signature .mono,
+.rgg-inner .eyebrow,
+.method-tabs>button .tab-number {
+  font-family:var(--mono);
+  font-size:var(--type-label);
+  font-weight:400;
+  line-height:var(--leading-label);
+  letter-spacing:var(--tracking-label);
+}
+.hero-bottom, .hero-bottom>a,
+.method-tags, .panel-note, .method-footer,
+.portrait-caption, .portrait-footer,
+.about-signature .mono {
+  letter-spacing:var(--tracking-compact);
+}
+.method-tags { gap:8px 14px; }
+.panel-note { white-space:normal; }
+.portrait-footer { gap:16px; }
+.portrait-footer>span:last-child { text-align:right; }
+
+/* Reading copy and links share stable roles across breakpoints. */
+.section-heading>p,
+.method-copy>p,
+.about-copy>p,
+.rgg-inner p {
+  font-size:var(--type-body);
+  line-height:1.8;
+}
+.hero-description { font-size:var(--type-intro);line-height:1.75; }
+.about-copy .about-lead { font-size:var(--type-lead);line-height:1.45; }
+.hero-aside,
+.hero-copy .button,
+.main-nav>a,
+.menu-label,
+.text-link,
+.rgg-link,
+.back-top,
+.footer-bottom a {
+  font-size:var(--type-ui);
+  line-height:var(--leading-ui);
+}
+.back-top, .footer-bottom { letter-spacing:var(--tracking-compact); }
+.footer-bottom { font-size:var(--type-label);line-height:var(--leading-label); }
+.footer-motto { font-size:var(--type-body);line-height:20px; }
+.footer-top .brand>span { font-size:var(--type-ui); }
+
+/* Technical annotations use one readable scale throughout the visuals. */
+.research-heading,
+.figure-heading .eyebrow,
+.chart-reading .mono,
+.chart-legend,
+.chart-legend .chart-hint,
+.mini-heading,
+.method-visual .mini-heading,
+.code-execution,
+.distribution-caption,
+.visual-line-label,
+.visual-caption,
+.equation-label,
+.code-file,
+.assumptions,
+.edge-scale-labels {
+  font-size:var(--type-data);
+  line-height:var(--leading-label);
+  letter-spacing:var(--tracking-compact);
+}
+.chart-reading .mono { color:#b0c8e8;text-wrap:balance; }
+.chart-reading { max-width:125px; }
+.chart-legend { flex-wrap:wrap;gap:6px 12px; }
+.chart-legend>span { white-space:nowrap; }
+.mini-heading { gap:12px; }
+.mini-heading>span:last-child { white-space:nowrap;flex-shrink:0; }
+.distribution-caption { white-space:normal;text-wrap:balance; }
+.visual-caption { flex-wrap:wrap;gap:4px 12px; }
+.research-footnote>a { font-size:var(--type-label);line-height:var(--leading-label);letter-spacing:var(--tracking-compact); }
+.chart-mode,
+.band-toggle,
+#scene-toggle,
+.edge-label,
+.edge-label small,
+.cost-control>label,
+.cost-control output,
+.cost-control p {
+  font-size:var(--type-ui);
+  line-height:var(--leading-ui);
+}
+.edge-label small { display:inline-block;opacity:.85; }
+.cost-control p { max-width:530px; }
+.model-equation { gap:12px; }
+.formula { gap:8px;white-space:nowrap;flex-shrink:0; }
+.equation-label { max-width:100px; }
+
+/* Inherit through code; browsers otherwise substitute their own monospace. */
+.code-fragment pre,
+.model-code pre {
+  font-family:var(--mono);
+  font-size:var(--type-code);
+  font-weight:400;
+  line-height:1.5;
+  letter-spacing:0;
+  overflow-x:auto;
+  scrollbar-width:thin;
+  scrollbar-color:#4f91ff55 transparent;
+}
+pre code { font:inherit;letter-spacing:inherit; }
+.readable-svg text { font-size:var(--chart-label-size,var(--type-data));fill:#a9c5e8;letter-spacing:0; }
+
+/* Use padding to preserve section rhythm, with adequate room for the glyphs. */
+.hero-grid { padding-bottom:80px; }
+.hero-bottom { padding-block:22px; }
+.method-footer { padding-block:18px; }
+.section-heading { margin-bottom:50px; }
+.method-panel { padding-block:44px; }
+.method-tags { margin-top:19px; }
+.panel-note { margin-top:35px; }
+.portrait-footer { padding-top:10px; }
+.footer-bottom { padding-top:16px; }
+
+@media(max-width:1190px) {
+  :root { --type-code:11px; }
+  .hero-grid { padding-bottom:60px; }
+  .research-bottom { gap:12px; }
+}
+
+@media(max-width:960px) {
+  .hero-grid { padding-bottom:44px; }
+  .model-code { padding-inline:10px; }
+}
+
+@media(max-width:760px) {
+  .site-header .brand>span { font-size:var(--type-ui); }
+  .main-nav>a { font-size:var(--type-intro);line-height:24px; }
+  .hero-location { display:none; }
+  .hero-topline { margin-top:23px; }
+  .hero-grid { padding-top:36px;padding-bottom:20px; }
+  .hero-bottom { min-block-size:56.5px;padding-block:7px; }
+  .hero-bottom>span { max-width:46%; }
+  .hero-bottom>a { max-width:48%; }
+  .research-composition { margin-top:35px; }
+  .market-figure { padding-block:18px 14px; }
+  .figure-heading { display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 12px; }
+  .figure-heading>div:first-child { display:contents; }
+  .figure-heading .eyebrow { grid-column:1/-1; }
+  .figure-heading h2 { grid-column:1;grid-row:2;margin-top:0; }
+  .chart-reading { grid-column:2;grid-row:2;padding-top:0;min-width:80px;max-width:100px; }
+  .chart-reading .mono { margin-top:3px; }
+  .chart-legend { gap:6px 10px; }
+  .research-footnote { gap:4px 12px;padding-top:8px; }
+  .research-footnote>a { padding-block:4px; }
+  .code-fragment { padding-block:13px 11px; }
+  .code-fragment pre { margin-top:9px; }
+  .code-execution { margin-top:9px;padding-top:7px; }
+  .section-heading { margin-bottom:30px; }
+  .method-panel { padding-block:27px;gap:23px; }
+  .method-tags { margin-top:13px; }
+  .method-visual { padding-block:17px; }
+  .method-visual .mini-heading { padding-bottom:12px; }
+  .model-equation { padding-block:16px; }
+  .model-code { padding-block:12px; }
+  .assumptions { gap:16px; }
+  .cost-control p { color:#b7cdeb; }
+  .method-footer { min-block-size:48px;padding-block:7px; }
+  .about-grid { gap:28px; }
+  .portrait-footer { padding-top:8px; }
+  .footer-top { gap:18px 10px;padding-bottom:22px; }
+  .footer-bottom { gap:10px 20px; }
+  .footer-bottom>div { gap:20px; }
+  .back-top { gap:7px; }
+}
+
+@media(max-width:460px) {
+  .research-footnote { justify-content:flex-start; }
+  .research-footnote>a { flex-basis:100%; }
+  .footer-bottom>div { width:100%;justify-content:space-between; }
+}
+
+@media(max-width:350px) {
+  .chart-legend .chart-hint { margin-left:0;flex-basis:100%; }
+  .hero-bottom { column-gap:12px; }
+  .method-tags { column-gap:10px;letter-spacing:0; }
+}

@@ -1,350 +1,194 @@
-<!DOCTYPE html>
-<html lang="es">
+<!doctype html>
+<html lang="es-AR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Alfa Bursátil — Tecnología aplicada a inversiones en Argentina</title>
-  <meta name="description" content="Laboratorio de tecnología financiera en Argentina. Desarrollamos dashboards, calculadoras de bonos y herramientas cuantitativas para inversores y asesores liderados por Pablo Spata.">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0B2333">
+  <title>Alfa Bursátil — Inversión basada en datos</title>
+  <meta name="description" content="Mercados, matemática y código. Un proyecto de Pablo Spata para explorar datos, modelos y herramientas de análisis financiero. La asesoría continúa en RGG Group.">
   <link rel="canonical" href="https://alfabursatil.com/">
-  
-  <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_AR">
+  <meta property="og:site_name" content="Alfa Bursátil">
   <meta property="og:url" content="https://alfabursatil.com/">
-  <meta property="og:title" content="Alfa Bursátil — Tecnología aplicada a inversiones">
-  <meta property="og:description" content="Dashboards, calculadoras de bonos y herramientas cuantitativas para el mercado financiero argentino.">
-  <meta property="og:image" content="assets/logo-alfa-bursatil.png">
-
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://alfabursatil.com/">
-  <meta property="twitter:title" content="Alfa Bursátil — Tecnología aplicada a inversiones">
-  <meta property="twitter:description" content="Dashboards, calculadoras de bonos y herramientas cuantitativas para el mercado financiero argentino.">
-  <meta property="twitter:image" content="assets/logo-alfa-bursatil.png">
-
-  <!-- Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Alfa Bursátil",
-    "url": "https://alfabursatil.com",
-    "logo": "assets/logo-alfa-bursatil.png",
-    "founder": {
-      "@type": "Person",
-      "name": "Pablo Spata",
-      "jobTitle": "Asesor Financiero",
-      "url": "https://pablospata.com"
-    },
-    "description": "Laboratorio de desarrollo de herramientas, modelos y dashboards para los mercados financieros argentinos."
-  }
-  </script>
-
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="icon" href="assets/favicon-32x32.png" sizes="32x32">
+  <meta property="og:title" content="Alfa Bursátil — Inversión basada en datos">
+  <meta property="og:description" content="Mercados, matemática y código. Un proyecto de Pablo Spata para explorar datos, modelos y herramientas de análisis financiero. La asesoría continúa en RGG Group.">
+  <meta property="og:image" content="https://alfabursatil.com/assets/logo-alfa-bursatil.png">
+  <meta property="og:image:alt" content="Logo de Alfa Bursátil">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Alfa Bursátil — Inversión basada en datos">
+  <meta name="twitter:description" content="Mercados, matemática y código. Un proyecto de Pablo Spata para explorar datos, modelos y herramientas de análisis financiero. La asesoría continúa en RGG Group.">
+  <meta name="twitter:image" content="https://alfabursatil.com/assets/logo-alfa-bursatil.png">
+  <link rel="icon" href="assets/favicon-32x32.png" sizes="32x32" type="image/png">
   <link rel="apple-touch-icon" href="assets/favicon-180x180.png">
+  <link rel="preload" href="assets/fonts/NimbusSans-Regular.otf" as="font" type="font/otf" crossorigin>
+  <link rel="preload" href="assets/fonts/NimbusRoman-Italic.otf" as="font" type="font/otf" crossorigin>
+  <link rel="stylesheet" href="css/style.css?v=20260927">
+  <link rel="stylesheet" href="css/typography.css?v=20260927">
+  <script src="js/main.js?v=20260927" defer></script>
+  <script src="js/typography.js?v=20260927" defer></script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Alfa Bursátil",
+  "url": "https://alfabursatil.com/",
+  "logo": "https://alfabursatil.com/assets/logo-alfa-bursatil.png",
+  "description": "Mercados, matemática y código. Un proyecto de Pablo Spata para explorar datos, modelos y herramientas de análisis financiero. La asesoría continúa en RGG Group.",
+  "founder": {
+    "@type": "Person",
+    "name": "Pablo Spata",
+    "url": "https://pablospata.com"
+  }
+}
+  </script>
 </head>
 <body>
-  <main>
+  <div class="scroll-progress" aria-hidden="true"></div>
+  <a class="skip-link" href="#contenido">Ir al contenido</a>
+  <svg class="icon-defs" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="arrow-up-right" viewBox="0 0 24 24"><path d="M5 19 19 5M5 5h14v14"/></symbol>
+    <symbol id="arrow-right" viewBox="0 0 24 24"><path d="M4 12h15M13 5l7 7-7 7"/></symbol>
+    <symbol id="arrow-down" viewBox="0 0 24 24"><path d="M12 4v15M5 13l7 7 7-7"/></symbol>
+  </svg>
 
-  <!-- Ambient background effects -->
-  <div class="bg-mesh"></div>
-  <div class="dot-pattern"></div>
-  <div class="cursor-glow"></div>
-
-  <!-- ====== NAVBAR ====== -->
-  <nav class="navbar">
-    <div class="container">
-      <a href="#" class="nav-brand">
-        <img src="assets/logo-alfa-bursatil.png" alt="Alfa Bursátil" class="nav-logo-img">
-        <div class="nav-title">Alfa <span>Bursátil</span></div>
+  <header class="site-header" id="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="#inicio" aria-label="Alfa Bursátil, inicio">
+        <img src="assets/logo-alfa-bursatil.png" alt="" width="43" height="43">
+        <span>ALFA <span class="brand-light">BURSÁTIL</span></span>
       </a>
-      <div class="nav-links" id="navLinks">
-        <a href="#hero" class="nav-link-item">Inicio</a>
-        <a href="#about" class="nav-link-item">Quién</a>
-        <a href="#alfa-today" class="nav-link-item">Qué es Alfa</a>
-        <a href="https://rgg-group.net" target="_blank" rel="noopener" class="nav-link-item">RGG Group</a>
-      </div>
-      <!-- Hamburger Toggle -->
-      <button class="menu-toggle" id="menuToggle" aria-label="Open Menu">
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
-      </button>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="main-nav"><span class="menu-label">Menú</span><span class="menu-lines" aria-hidden="true"></span></button>
+      <nav class="main-nav" id="main-nav" aria-label="Navegación principal">
+        <a href="#enfoque">El enfoque</a>
+        <a href="#pablo">Detrás de Alfa Bursátil</a>
+        <a class="nav-external" href="https://rgg-group.net" target="_blank" rel="noopener noreferrer">RGG Group <svg class="icon"><use href="#arrow-up-right"/></svg><span class="sr-only">, abre en una pestaña nueva</span></a>
+      </nav>
     </div>
-  </nav>
+  </header>
 
-  <!-- ====== HERO ====== -->
-  <section class="hero" id="hero">
-    <div class="container">
-      <div class="hero-inner">
-        <!-- Left column -->
-        <div class="hero-content">
-          <div class="hero-badge">
-            <span class="dot"></span>
-            <span class="ticker-text">Dashboards</span>
+  <main id="contenido">
+    <section class="hero" id="inicio" aria-labelledby="hero-title">
+      <div class="hero-grain" aria-hidden="true"></div>
+      <div class="dot-field" aria-hidden="true"></div>
+      <div class="hero-aurora aurora-one" aria-hidden="true"></div>
+      <div class="hero-aurora aurora-two" aria-hidden="true"></div>
+      <canvas id="quantum-field" aria-hidden="true"></canvas>
+      <div class="shell">
+        <div class="hero-topline mono"><span><span class="small-cross" aria-hidden="true">+</span> UN PROYECTO DE PABLO SPATA</span><span class="hero-location">BUENOS AIRES, AR <span class="line-dot"></span></span></div>
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <h1 id="hero-title"><span class="hero-word word-one">Mercados.</span><span class="hero-word word-two">Matemática.</span><span class="hero-word word-three">Código<span class="blue-period">.</span></span></h1>
+            <p class="hero-description">Una mirada propia sobre los mercados.<br> Datos, modelos y herramientas para<br class="desktop-break"> ir más allá de la intuición.</p>
+            <a class="button button-light" href="#enfoque">Explorar el enfoque <svg class="icon"><use href="#arrow-down"/></svg></a>
+            <p class="hero-aside">La asesoría continúa en <a href="https://rgg-group.net" target="_blank" rel="noopener noreferrer">RGG Group <span aria-hidden="true">↗</span><span class="sr-only">, abre en una pestaña nueva</span></a></p>
           </div>
-          <h1>
-            Tecnología aplicada<br>
-            a <span class="gradient-text">inversiones.</span>
-          </h1>
-          <p class="hero-description">
-            Alfa Bursátil es un laboratorio de desarrollo de herramientas, modelos y
-            dashboards para entender mejor los mercados financieros. Hoy esa tecnología
-            potencia la asesoría de <strong>RGG Group</strong>, donde Pablo Spata atiende
-            a sus clientes junto a su socio Julián Ruggiero.
-          </p>
-          <div class="hero-ctas">
-            <a href="https://rgg-group.net" target="_blank" rel="noopener" class="btn-primary">
-              Quiero asesoría financiera
-              <span class="btn-arrow">→</span>
-            </a>
-            <a href="https://pablospata.com" target="_blank" rel="noopener" class="btn-secondary">
-              Conocer a Pablo Spata
-              <span class="btn-arrow">→</span>
-            </a>
-          </div>
-        </div>
-        <!-- Right column — Ultra-Premium Fintech Lab Dashboard -->
-        <div class="hero-visual">
-          <div class="chart-card">
-            <div class="card-gloss"></div>
-            
-            <!-- Card Header -->
-            <div class="chart-header">
-              <div class="chart-header-left">
-                <div class="market-status">
-                  <div class="live-indicator">
-                    <span class="live-dot"></span>
-                    <span class="mono">SYSTEM_ACTIVE</span>
-                  </div>
-                  <div class="trend-badge bullish">
-                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
-                    BULLISH
-                  </div>
+
+          <div class="research-composition" aria-label="Estudio visual de una serie de mercado sintética">
+            <div class="research-heading mono"><span><span class="research-square" aria-hidden="true"></span> ALFA BURSÁTIL / QUANT LAB</span><button id="scene-toggle" type="button" aria-pressed="false" aria-label="Pausar animaciones y simulación"><span class="pause-symbol" aria-hidden="true">Ⅱ</span><span class="scene-toggle-label">Pausar</span></button></div>
+            <div class="scene-orbit orbit-one" aria-hidden="true"></div><div class="scene-orbit orbit-two" aria-hidden="true"></div>
+            <figure class="market-figure">
+              <figcaption class="figure-heading">
+                <div><span class="eyebrow mono">SIMULACIÓN · DATOS SINTÉTICOS</span><h2>El mercado, en perspectiva.</h2></div>
+                <div class="chart-reading"><span id="price-readout">100,00</span><span class="mono" id="sample-readout">ÍNDICE · BASE 100</span></div>
+              </figcaption>
+              <div class="chart-toolbar">
+                <div class="chart-modes" role="group" aria-label="Representación del precio">
+                  <button type="button" class="chart-mode active" data-chart-mode="candles" aria-pressed="true">Velas</button>
+                  <button type="button" class="chart-mode" data-chart-mode="line" aria-pressed="false">Línea</button>
                 </div>
-                <div class="chart-label">QUANTITATIVE NAV</div>
-                <div class="chart-value">$<span>34,180</span>.25</div>
+                <button type="button" class="band-toggle mono" id="band-toggle" aria-pressed="true"><span aria-hidden="true"></span> Banda ±2σ</button>
               </div>
-              <div class="chart-badge-large">
-                <div class="badge-sub">24H CHANGE</div>
-                <div class="badge-val">+14.2%</div>
+              <div class="market-chart" id="market-chart" tabindex="0" role="group" aria-label="Serie sintética de 144 observaciones. Usá las flechas izquierda y derecha para recorrerla. La banda muestra la media móvil más y menos dos desviaciones estándar.">
+                <svg id="hero-chart" viewBox="0 0 720 326" role="img" aria-labelledby="chart-title chart-desc">
+                  <title id="chart-title">Serie de precios ilustrativa y banda estadística</title>
+                  <desc id="chart-desc">Representación de una serie sintética con fluctuaciones, media móvil y separación temporal entre exploración y validación. No son cotizaciones ni resultados de una estrategia.</desc>
+                  <defs>
+                    <linearGradient id="price-area" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#306BFF" stop-opacity=".36"/><stop offset="1" stop-color="#8ac9ec" stop-opacity="0"/></linearGradient>
+                    <linearGradient id="band-area" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#306BFF" stop-opacity=".36"/><stop offset="1" stop-color="#306BFF" stop-opacity=".045"/></linearGradient>
+                    <clipPath id="chart-clip"><rect x="10" y="26" width="650" height="232"/></clipPath>
+                  </defs>
+                  <g id="chart-static"><path d="M10 170 55 160 85 175 125 128 155 138 190 102 225 134 260 117 300 150 335 108 375 124 405 78 450 102 490 66 535 79 570 52 610 64 650 39" fill="none" stroke="#9dcfe8" stroke-width="2"/></g>
+                  <g id="chart-data" clip-path="url(#chart-clip)"></g>
+                  <g id="chart-cursor" visibility="hidden"><line id="crosshair-x" y1="26" y2="258" stroke="#c7dcea" stroke-opacity=".42" stroke-dasharray="3 4"/><line id="crosshair-y" x1="10" x2="660" stroke="#c7dcea" stroke-opacity=".22" stroke-dasharray="3 4"/><circle id="crosshair-dot" r="4" fill="#cce8fb" stroke="#0a111a" stroke-width="2"/></g>
+                </svg>
+                <noscript><p class="noscript-note">Vista ilustrativa. Las interacciones requieren JavaScript.</p></noscript>
               </div>
-            </div>
-
-            <!-- Advanced SVG Chart with Coordinates -->
-            <div class="chart-container">
-              <div class="chart-coords">
-                <span class="coord">42k</span>
-                <span class="coord">38k</span>
-                <span class="coord">34k</span>
+              <div class="chart-legend mono"><span><i class="legend-mark price-mark"></i>PRECIO</span><span><i class="legend-mark mean-mark"></i>MEDIA MÓVIL</span><span class="chart-hint">EXPLORÁ EL GRÁFICO <span aria-hidden="true">↔</span></span></div>
+            </figure>
+            <div class="research-bottom">
+              <div class="code-fragment">
+                <div class="mini-heading mono"><span><span class="file-dot"></span> research.py</span><span>PYTHON</span></div>
+                <pre aria-label="Ejemplo de código: separar datos temporalmente, ajustar el modelo y evaluar con costos"><code><span class="code-muted">01</span> <span class="code-blue">train</span>, test = split_temporal(data)
+<span class="code-muted">02</span> model.<span class="code-gold">fit</span>(train)
+<span class="code-muted">03</span> report = <span class="code-gold">evaluate</span>(model, test,
+<span class="code-muted">04</span>                   costs=costs)</code></pre><div class="code-execution mono"><span class="execution-dot" aria-hidden="true"></span><span id="execution-label">Separando la serie</span><span class="execution-cursor" aria-hidden="true">▊</span></div>
               </div>
-              <svg class="chart-svg" viewBox="0 0 400 160" preserveAspectRatio="none">
-                <defs>
-                  <linearGradient id="chartGradient" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stop-color="var(--accent)" stop-opacity=".4"/>
-                    <stop offset="100%" stop-color="var(--accent)" stop-opacity="0"/>
-                  </linearGradient>
-                </defs>
-                <g class="chart-grid">
-                  <line x1="0" y1="30" x2="400" y2="30" stroke="rgba(255,255,255,0.05)" stroke-dasharray="4" />
-                  <line x1="0" y1="70" x2="400" y2="70" stroke="rgba(255,255,255,0.05)" stroke-dasharray="4" />
-                  <line x1="0" y1="110" x2="400" y2="110" stroke="rgba(255,255,255,0.05)" stroke-dasharray="4" />
-                </g>
-                <path class="chart-area"
-                  d="M0,140 C40,130 60,110 100,105 C140,100 160,80 200,85 C240,90 260,60 300,55 C340,50 360,30 400,20 L400,160 L0,160 Z"
-                  fill="url(#chartGradient)"/>
-                <path class="chart-line"
-                  d="M0,140 C40,130 60,110 100,105 C140,100 160,80 200,85 C240,90 260,60 300,55 C340,50 360,30 400,20"/>
-                <circle cx="400" cy="20" r="4" fill="var(--accent)" class="chart-point" />
-              </svg>
-              <!-- Technical markers -->
-              <div class="chart-marker" style="left: 25%; top: 60%">
-                <div class="marker-dot"></div>
-                <div class="marker-label">SUPPORT_V1</div>
+              <div class="distribution-fragment">
+                <div class="mini-heading mono"><span>DISTRIBUCIÓN</span><span>rₜ</span></div>
+                <svg id="hero-distribution" viewBox="0 0 200 86" role="img" aria-label="Distribución de los retornos de la serie sintética"></svg>
+                <span class="distribution-caption mono">EL RIESGO TAMBIÉN ES INFORMACIÓN.</span>
               </div>
             </div>
-
-            <!-- Asset Ticker Tape -->
-            <div class="card-ticker">
-              <div class="ticker-track">
-                <div class="ticker-item"><span class="ticker-icon ggal"></span> GGAL <span class="val positive">+3.2%</span></div>
-                <div class="ticker-item"><span class="ticker-icon al30"></span> AL30 <span class="val positive">+1.5%</span></div>
-                <div class="ticker-item"><span class="ticker-icon aapl"></span> AAPL <span class="val negative">-0.8%</span></div>
-                <div class="ticker-item"><span class="ticker-icon ypf"></span> YPFD <span class="val positive">+2.4%</span></div>
-                <!-- Duplicate for seamless loop -->
-                <div class="ticker-item"><span class="ticker-icon ggal"></span> GGAL <span class="val positive">+3.2%</span></div>
-                <div class="ticker-item"><span class="ticker-icon al30"></span> AL30 <span class="val positive">+1.5%</span></div>
-              </div>
-            </div>
-
-            <!-- Stats Footer -->
-            <div class="card-footer-stats">
-              <div class="footer-stat">
-                <span class="label">VOL (24H)</span>
-                <span class="val">$1.2M</span>
-              </div>
-              <div class="footer-stat">
-                <span class="label">ALPHA-SCORE</span>
-                <span class="val positive">0.94</span>
-              </div>
-              <div class="footer-stat">
-                <span class="label">SHARPE_RATIO</span>
-                <span class="val">2.81</span>
-              </div>
-            </div>
-
-            <!-- Absolute positioned technical pills -->
-            <div class="stat-pill pill-upper">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7"/><path d="M4 12c-1.1 0-2-.9-2-2V7a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v3c0 1.1-.9 2-2 2"/><path d="M6 17c-1.1 0-2-.9-2-2v-3"/><path d="M18 17c1.1 0 2-.9 2-2v-3"/><path d="M6 17v2a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-2"/><circle cx="12" cy="12" r="3"/></svg>
-              <span>MODEL_ALPHA_READY</span>
-            </div>
+            <div class="research-footnote"><span class="research-equation" aria-label="Expectativa neta igual a probabilidad de ganar por ganancia, menos probabilidad de perder por pérdida, menos costos">E[R] = pG − (1−p)L − <span>C</span></span><a class="mono" id="explore-edge" href="#enfoque">EL EDGE SE INVESTIGA <span aria-hidden="true">↗</span></a></div>
           </div>
         </div>
+        <div class="hero-bottom mono"><span>LA CURIOSIDAD ES EL PUNTO DE PARTIDA.</span><a href="#enfoque">EL MÉTODO, EL SIGUIENTE PASO <svg class="icon"><use href="#arrow-down"/></svg></a></div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ====== DIVIDER ====== -->
-  <div class="section-divider"></div>
-
-  <!-- ====== QUIÉN ESTÁ DETRÁS ====== -->
-  <section class="section about" id="about">
-    <div class="container">
-      <div class="section-label reveal">
-        <span class="line"></span> Quién está detrás
-      </div>
-      <div class="about-grid">
-        <!-- Photo column -->
-        <div class="about-photo-wrapper reveal">
-          <div class="about-photo">
-            <img src="assets/pablo-agente-productor-1.webp" alt="Pablo Spata — Alfa Bursátil" class="about-photo-img" loading="lazy">
-            <div class="about-photo-overlay">
-              <div class="about-photo-name">Pablo Spata</div>
-              <div class="about-photo-role">Asesor Financiero</div>
-            </div>
-          </div>
-          <div class="cnv-badge">
-            <svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            <span>Idóneo CNV AP 2165</span>
-          </div>
+    <section class="approach light-section" id="enfoque" aria-labelledby="approach-title">
+      <div class="shell">
+        <div class="section-index mono reveal"><span>01 / EL ENFOQUE</span><span>DE LA OBSERVACIÓN A LA EVIDENCIA</span></div>
+        <div class="section-heading reveal">
+          <h2 id="approach-title">De los datos<br><em>a una mirada propia.</em></h2>
+          <p>Entender un mercado implica hacer preguntas, construir herramientas y poner a prueba los supuestos. Esta es la forma de pensar detrás de Alfa Bursátil.</p>
         </div>
-        <!-- Content column -->
-        <div class="about-content reveal">
-          <h2>Pablo Spata</h2>
-          <div class="role">Asesor Financiero — Idóneo CNV AP 2165</div>
-          <p>
-            Pablo trabaja hace más de <strong>10 años en mercados de capitales</strong>.
-            Fundó Alfa Bursátil como un proyecto personal para construir las herramientas
-            que él mismo necesitaba como asesor: dashboards, calculadoras, monitores de bonos
-            y CEDEARs.
-          </p>
-          <p>
-            Hoy esa misma tecnología es la base de <strong>RGG Plus</strong>, la plataforma
-            de RGG Group, donde junto a Julián atienden a más de
-            <strong>2.000 clientes</strong> en Argentina.
-          </p>
-          <!-- Stats -->
-          <div class="about-stats">
-            <div class="stat-item">
-              <div class="stat-number" data-count="10" data-suffix="+">0</div>
-              <div class="stat-desc">Años en mercados</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-number" data-count="2000" data-suffix="+">0</div>
-              <div class="stat-desc">Clientes activos</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-number" data-count="15" data-suffix="">0</div>
-              <div class="stat-desc">Herramientas creadas</div>
-            </div>
-          </div>
+        <div class="method-tabs" role="tablist" aria-label="Explorar el método de investigación">
+          <button type="button" role="tab" id="tab-observe" aria-selected="true" aria-controls="panel-observe" tabindex="0"><span class="tab-number mono">01</span><span>Observar</span><svg class="icon"><use href="#arrow-up-right"/></svg></button>
+          <button type="button" role="tab" id="tab-model" aria-selected="false" aria-controls="panel-model" tabindex="-1"><span class="tab-number mono">02</span><span>Modelar</span><svg class="icon"><use href="#arrow-up-right"/></svg></button>
+          <button type="button" role="tab" id="tab-validate" aria-selected="false" aria-controls="panel-validate" tabindex="-1"><span class="tab-number mono">03</span><span>Contrastar</span><svg class="icon"><use href="#arrow-up-right"/></svg></button>
+        </div>
+
+        <div class="method-panel" id="panel-observe" role="tabpanel" aria-labelledby="tab-observe" tabindex="0">
+          <div class="method-copy"><span class="eyebrow mono">EL MERCADO COMO PREGUNTA</span><h3>Encontrar estructura<br> entre el ruido.</h3><p>Un precio cuenta una parte de la historia. Sus retornos, su variabilidad y el contexto permiten hacer preguntas más precisas.</p><div class="method-tags mono"><span>SERIES TEMPORALES</span><span>RETORNOS</span><span>CONTEXTO</span></div><span class="panel-note mono">LA OBSERVACIÓN PRECEDE A LA HIPÓTESIS.</span></div>
+          <figure class="method-visual observation-visual"><figcaption class="mini-heading mono"><span>UNA SERIE. DOS LECTURAS.</span><span>FIG. 02</span></figcaption><div class="visual-line-label mono"><span>PRECIO NORMALIZADO</span><span>BASE 100</span></div><svg id="observation-price" viewBox="0 0 620 140" role="img" aria-label="Evolución de precios sintéticos"></svg><div class="visual-line-label mono"><span>RETORNO ENTRE OBSERVACIONES</span><span>%</span></div><svg id="observation-returns" viewBox="0 0 620 100" role="img" aria-label="Retornos porcentuales calculados a partir de la serie sintética"></svg><p class="visual-caption mono">MISMA INFORMACIÓN · OTRA PERSPECTIVA <span>DATOS SINTÉTICOS</span></p></figure>
+        </div>
+
+        <div class="method-panel" id="panel-model" role="tabpanel" aria-labelledby="tab-model" tabindex="0" hidden>
+          <div class="method-copy"><span class="eyebrow mono">DE LA IDEA A UNA REGLA</span><h3>Una hipótesis<br> que se pueda medir.</h3><p>Las matemáticas hacen explícitos los supuestos. El código los transforma en un procedimiento que se puede inspeccionar, repetir y corregir.</p><div class="method-tags mono"><span>MATEMÁTICA</span><span>PYTHON</span><span>REPRODUCIBILIDAD</span></div><span class="panel-note mono">HACER EXPLÍCITO LO QUE DAMOS POR HECHO.</span></div>
+          <div class="method-visual model-visual"><div class="mini-heading mono"><span>DEFINIR → IMPLEMENTAR</span><span>FIG. 03</span></div><div class="model-equation"><span class="equation-label mono">RETORNO LOGARÍTMICO</span><span class="formula"><span>r<sub>t</sub></span><span>= ln</span><span class="fraction"><span>P<sub>t</sub></span><span>P<sub>t−1</sub></span></span></span></div><div class="model-code mono"><span class="code-file">returns.py</span><pre><code><span class="code-muted"># Retornos logarítmicos</span>
+<span class="code-blue">import</span> numpy <span class="code-blue">as</span> np
+
+ratio = prices[<span class="code-blue">1</span>:] / prices[:-<span class="code-blue">1</span>]
+log_returns = np.<span class="code-gold">log</span>(ratio)
+mean = log_returns.<span class="code-gold">mean</span>()
+volatility = log_returns.<span class="code-gold">std</span>(ddof=<span class="code-blue">1</span>)</code></pre></div></div>
+        </div>
+
+        <div class="method-panel" id="panel-validate" role="tabpanel" aria-labelledby="tab-validate" tabindex="0" hidden>
+          <div class="method-copy"><span class="eyebrow mono">EL EDGE SE INVESTIGA</span><h3>Los supuestos<br> cambian el resultado.</h3><p>Una ventaja aparente puede desaparecer al incorporar costos. Evaluar fuera de muestra, medir el riesgo y revisar las limitaciones también son parte del trabajo.</p><div class="method-tags mono"><span>FUERA DE MUESTRA</span><span>COSTOS</span><span>INCERTIDUMBRE</span></div><span class="panel-note mono">EXPLORÁ UN EJEMPLO MATEMÁTICO →</span></div>
+          <div class="method-visual validation-visual"><div class="mini-heading mono"><span>EXPECTATIVA NETA / EJEMPLO DIDÁCTICO</span><span>FIG. 04</span></div><div class="expectancy-formula" aria-label="Expectativa neta igual a probabilidad de ganar por ganancia, menos probabilidad de perder por pérdida, menos costos">E[R] = pG − (1−p)L − <span>C</span></div><div class="assumptions mono"><span>p = 54%</span><span>G = 1,4 R</span><span>L = 1 R</span></div><div class="edge-result"><span class="edge-label">Expectativa neta<br><small>por operación</small></span><output id="edge-output" for="cost-input" aria-label="Expectativa neta por operación">+0,216 <small>R</small></output></div><div class="edge-scale" aria-hidden="true"><span class="edge-zero"></span><span id="edge-marker"></span><div class="edge-scale-labels mono"><span>−0,32 R</span><span>0</span><span>+0,32 R</span></div></div><div class="cost-control"><label for="cost-input">Costo por operación <output id="cost-output" for="cost-input">0,08 R</output></label><input id="cost-input" type="range" min="0" max="0.6" value="0.08" step="0.01" aria-describedby="cost-description"><p id="cost-description">Mové el costo y observá la expectativa. R representa una unidad de riesgo. Supuestos ilustrativos; no son resultados de una estrategia.</p></div></div>
+        </div>
+        <div class="method-footer mono"><span><span class="small-cross" aria-hidden="true">+</span> EL MÉTODO SE EXPLORA. LOS RESULTADOS SE CONTRASTAN.</span><span>ALFA BURSÁTIL</span></div>
+      </div>
+    </section>
+
+    <section class="about-section" id="pablo" aria-labelledby="about-title">
+      <div class="shell">
+        <div class="section-index mono reveal"><span>02 / DETRÁS DE ALFA BURSÁTIL</span><span>UNA MARCA. UNA MIRADA PROPIA.</span></div>
+        <div class="about-grid">
+          <div class="portrait-block reveal"><div class="portrait-frame"><div class="portrait-scan" aria-hidden="true"></div><img src="assets/pablo-agente-productor-1.webp" alt="Pablo Spata, fundador de Alfa Bursátil, sentado en su escritorio" width="700" height="933" loading="lazy"><span class="portrait-corner top-left" aria-hidden="true"></span><span class="portrait-corner bottom-right" aria-hidden="true"></span><span class="portrait-caption mono">BUENOS AIRES, ARGENTINA</span></div><div class="portrait-footer mono"><span>PABLO LEONARDO SPATA</span><span>FUNDADOR / ALFA BURSÁTIL</span></div></div>
+          <div class="about-copy reveal"><span class="eyebrow mono">MERCADOS + TECNOLOGÍA + CURIOSIDAD</span><h2 id="about-title">Pablo <em>Spata.</em></h2><p class="about-lead">Alfa Bursátil nació de una necesidad propia: construir las herramientas que quería tener como asesor.</p><p>Dashboards, calculadoras y monitores de mercado. Un lugar para conectar el conocimiento financiero con la programación y explorar otras formas de analizar los mercados.</p><p>Hoy concentro mi actividad de asesoría en <a href="https://rgg-group.net" target="_blank" rel="noopener noreferrer">RGG Group<span class="sr-only">, abre en una pestaña nueva</span></a>. Alfa Bursátil conserva su identidad como proyecto personal: una forma de pensar y un espacio para lo que venga.</p><a class="text-link" href="https://pablospata.com" target="_blank" rel="noopener noreferrer">Conocer mi trayectoria <svg class="icon"><use href="#arrow-up-right"/></svg><span class="sr-only">, abre en una pestaña nueva</span></a><div class="about-signature"><img src="assets/logo-alfa-bursatil.png" alt="" width="44" height="44"><span class="mono">CRITERIO FINANCIERO.<br>ESPÍRITU TECNOLÓGICO.</span></div></div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ====== DIVIDER ====== -->
-  <div class="section-divider"></div>
-
-  <!-- ====== QUÉ ES ALFA HOY ====== -->
-  <section class="section alfa-today" id="alfa-today">
-    <div class="container">
-      <div class="section-label reveal">
-        <span class="line"></span> Qué es Alfa hoy
-      </div>
-      <h2 class="section-title reveal">
-        De asesoría independiente<br>a <span class="gradient-text">laboratorio tecnológico.</span>
-      </h2>
-      <p class="section-subtitle reveal">
-        Alfa Bursátil dejó de operar como servicio de asesoría independiente.
-        Toda la atención a clientes, gestión de carteras y suscripciones
-        se trasladaron a <strong>RGG Group</strong>.
-      </p>
-      <p class="section-subtitle reveal" style="margin-top:1rem">
-        Lo que sigue vivo en Alfa es el costado técnico: el desarrollo de
-        herramientas cuantitativas y la exploración de nuevas formas de
-        analizar el mercado argentino.
-      </p>
-
-      <div class="alfa-grid">
-        <!-- Card 1 — RGG -->
-        <div class="alfa-card card-rgg reveal">
-          <div class="card-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
-            </svg>
-          </div>
-          <h3>Para asesoría o invertir</h3>
-          <p>
-            Toda la operatoria de asesoría financiera, gestión de carteras
-            y suscripciones se encuentra en RGG Group.
-          </p>
-          <a href="https://rgg-group.net" target="_blank" rel="noopener" class="card-link">
-            Ir a RGG Group <span class="btn-arrow">→</span>
-          </a>
-        </div>
-        <!-- Card 2 — Pablo -->
-        <div class="alfa-card card-pablo reveal">
-          <div class="card-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/>
-            </svg>
-          </div>
-          <h3>Conocer más sobre Pablo</h3>
-          <p>
-            Trayectoria profesional, publicaciones y todo sobre el
-            fundador de Alfa Bursátil.
-          </p>
-          <a href="https://pablospata.com" target="_blank" rel="noopener" class="card-link">
-            pablospata.com <span class="btn-arrow">→</span>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ====== FOOTER ====== -->
+    <section class="rgg-section" aria-labelledby="rgg-title">
+      <div class="shell rgg-inner"><div><span class="eyebrow mono">03 / SIGAMOS LA CONVERSACIÓN</span><h2 id="rgg-title">La asesoría sigue<br>en <em>RGG Group.</em></h2><p>Si buscás acompañamiento para invertir,<br>nos encontramos ahí.</p></div><a class="rgg-link" href="https://rgg-group.net" target="_blank" rel="noopener noreferrer"><span>Conocer RGG Group</span><span class="rgg-arrow"><svg class="icon"><use href="#arrow-up-right"/></svg></span><span class="sr-only">, abre en una pestaña nueva</span></a><span class="rgg-watermark" aria-hidden="true">↗</span></div>
+    </section>
   </main>
 
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-inner">
-        <div class="footer-left">
-          <div class="footer-brand">Alfa <span>Bursátil</span></div>
-          <div class="footer-legal">
-            Pablo Leonardo Spata · Idóneo CNV AP 2165<br>
-            Parte de RGG Group SAS · 25 de Mayo, Buenos Aires
-          </div>
-        </div>
-        <div class="footer-right">
-          <a href="https://pablospata.com" target="_blank" rel="noopener" class="footer-link">pablospata.com</a>
-          <a href="https://rgg-group.net" target="_blank" rel="noopener" class="footer-link">RGG Group</a>
-          <span class="footer-link" style="cursor:default;color:var(--text-muted)">© 2026</span>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Scripts -->
-  <script src="js/main.js"></script>
+  <footer class="site-footer"><div class="shell"><div class="footer-top"><a class="brand" href="#inicio" aria-label="Alfa Bursátil, volver al inicio"><img src="assets/logo-alfa-bursatil.png" alt="" width="37" height="37"><span>ALFA <span class="brand-light">BURSÁTIL</span></span></a><span class="footer-motto">Inversión basada en datos.</span><a class="back-top mono" href="#inicio">VOLVER ARRIBA <svg class="icon"><use href="#arrow-up-right"/></svg></a></div><div class="footer-bottom mono"><span>© <span id="year">2026</span> ALFA BURSÁTIL · PABLO SPATA</span><span>BUENOS AIRES, ARGENTINA</span><div><a href="https://pablospata.com" target="_blank" rel="noopener noreferrer">PABLOSPATA.COM <span aria-hidden="true">↗</span><span class="sr-only">, abre en una pestaña nueva</span></a><a href="https://rgg-group.net" target="_blank" rel="noopener noreferrer">RGG GROUP <span aria-hidden="true">↗</span><span class="sr-only">, abre en una pestaña nueva</span></a></div></div></div></footer>
 </body>
 </html>
