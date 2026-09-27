@@ -41,7 +41,9 @@ GitHub Pages está configurado para publicar `main` desde la raíz del repositor
 
 https://pablospata.github.io/alfa-bursatil-website/
 
-El dominio https://alfabursatil.com/ responde desde un hosting separado. Publicar en GitHub Pages no demuestra por sí solo que ese dominio se haya actualizado: hay que verificarlo y sincronizar los archivos en su hosting cuando corresponda. No agregar un `CNAME` ni cambiar DNS como parte de una actualización ordinaria.
+El dominio https://alfabursatil.com/ se publica en Hostinger desde la raíz de `main`, mediante **Avanzado → Git**. El webhook de GitHub avisa de los pushes a Hostinger, cuya instalación está configurada para publicar `main`. La URL del webhook se guarda en la configuración privada del repositorio, fuera del código.
+
+El flujo de publicación es trabajar en `dev`, revisar los cambios, incorporar la versión aprobada a `main` y hacer push de `main`. Después, comprobar la entrega del webhook en GitHub y el resultado en https://alfabursatil.com/. GitHub Pages y Hostinger tienen publicaciones independientes: verificar Pages no sustituye la comprobación del dominio propio. No agregar un `CNAME` ni cambiar DNS como parte de una actualización ordinaria.
 
 Los recursos usan rutas relativas para funcionar tanto en el dominio propio como bajo la ruta del proyecto en GitHub Pages. La página principal conserva su canonical hacia el dominio propio y no contiene las restricciones `noindex` de los previews.
 
