@@ -47,6 +47,14 @@ El flujo de publicación es trabajar en `dev`, revisar los cambios, incorporar l
 
 Los recursos usan rutas relativas para funcionar tanto en el dominio propio como bajo la ruta del proyecto en GitHub Pages. La página principal conserva su canonical hacia el dominio propio y no contiene las restricciones `noindex` de los previews.
 
+## SEO básico
+
+Los metadatos presentan Alfa Bursátil como un proyecto personal de Pablo Spata sobre mercados, matemática y código. El marcado `WebSite` incluye el nombre del sitio y su creador como `Person`; la asesoría se deriva a RGG Group en el contenido público.
+
+La URL principal es `https://alfabursatil.com/`. En Hostinger, `.htaccess` redirige permanentemente `www` y las solicitudes explícitas a `/index.html` hacia esa versión, conservando las rutas y los parámetros. Hostinger ya fuerza HTTPS. GitHub Pages mantiene el canonical hacia el dominio propio.
+
+`robots.txt` permite el rastreo y anuncia `sitemap.xml`. Actualizar `lastmod` sólo cuando cambie sustancialmente el contenido de la página. Google Search Console permite comprobar la indexación real, enviar el sitemap y solicitar una revisión después de cambios relevantes; esas tareas requieren acceso a la propiedad del dominio.
+
 ## Verificación
 
 Revisar los estados de menú, pestañas, gráfico, costo y pausa; comprobar foco de teclado y movimiento reducido. La versión aprobada fue revisada de 320 a 1920 px. Los cambios de tipografía requieren revisar el encaje del sitio completo, el footer centrado y la ausencia de recortes o desbordes.

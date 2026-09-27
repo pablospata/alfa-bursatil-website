@@ -1,0 +1,12 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Redirect explicit index.html requests, not internal DirectoryIndex resolution.
+  RewriteCond %{HTTP_HOST} ^(www\.)?alfabursatil\.com$ [NC]
+  RewriteCond %{THE_REQUEST} \s/+index\.html[?\s] [NC]
+  RewriteRule ^index\.html$ https://alfabursatil.com/ [R=301,L]
+
+  # Keep one public hostname and preserve paths and query strings.
+  RewriteCond %{HTTP_HOST} ^www\.alfabursatil\.com$ [NC]
+  RewriteRule ^ https://alfabursatil.com%{REQUEST_URI} [R=301,L]
+</IfModule>
