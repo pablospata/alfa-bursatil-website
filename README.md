@@ -55,6 +55,8 @@ La URL principal es `https://alfabursatil.com/`. En Hostinger, `.htaccess` redir
 
 `robots.txt` permite el rastreo y anuncia `sitemap.xml`. Actualizar `lastmod` sólo cuando cambie sustancialmente el contenido de la página. Google Search Console permite comprobar la indexación real, enviar el sitemap y solicitar una revisión después de cambios relevantes; esas tareas requieren acceso a la propiedad del dominio.
 
+La etiqueta `google-site-verification` de `index.html` permite verificar la propiedad de prefijo de URL en Search Console. Conservarla después de verificar y en futuras publicaciones, porque Google vuelve a comprobarla periódicamente.
+
 ## Verificación
 
 Revisar los estados de menú, pestañas, gráfico, costo y pausa; comprobar foco de teclado y movimiento reducido. La versión aprobada fue revisada de 320 a 1920 px. Los cambios de tipografía requieren revisar el encaje del sitio completo, el footer centrado y la ausencia de recortes o desbordes.
