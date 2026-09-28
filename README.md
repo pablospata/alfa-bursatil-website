@@ -1,6 +1,6 @@
 # Alfa Bursátil
 
-Landing de Alfa Bursátil, un proyecto de Pablo Spata. Diseño aprobado en septiembre de 2026: mercados, matemática y código, con una escena de investigación animada y una tipografía organizada por función.
+Sitio de Alfa Bursátil, creado por Pablo Spata. Diseño aprobado en septiembre de 2026: mercados, matemática y código, con una escena de investigación animada y una tipografía organizada por función.
 
 Sitio estático con HTML, CSS y JavaScript, sin instalación ni compilación. Fuentes, fotografías y gráficos se sirven localmente; no hay analítica ni dependencias externas de ejecución.
 
@@ -49,7 +49,7 @@ Los recursos usan rutas relativas para funcionar tanto en el dominio propio como
 
 ## SEO básico
 
-Los metadatos presentan Alfa Bursátil como un proyecto personal de Pablo Spata sobre mercados, matemática y código. El marcado `WebSite` incluye el nombre del sitio y su creador como `Person`; la asesoría se deriva a RGG Group en el contenido público.
+Los metadatos presentan Alfa Bursátil a partir de su enfoque en mercados financieros, matemática y código: investigación, modelos y herramientas de análisis. El marcado `WebSite` incluye el nombre del sitio y su creador como `Person`; la asesoría se deriva a RGG Group en el contenido público.
 
 La URL principal es `https://alfabursatil.com/`. En Hostinger, `.htaccess` redirige permanentemente `www` y las solicitudes explícitas a `/index.html` hacia esa versión, conservando las rutas y los parámetros. Hostinger ya fuerza HTTPS. GitHub Pages mantiene el canonical hacia el dominio propio.
 
